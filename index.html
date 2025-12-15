@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box login">
+            <form action="#">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <div class="forgot-link">
+                        <a href="#" id="forgotLink">Forgot Password?</a>
+                </div>
+                                <button type="submit" class="btn">Login</button>                                                                      
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <form action="#">
+                <h1>Registration</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope' ></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt' ></i>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+
+        <div class="toggle-box">
+            <div class="toggle-panel toggle-left">
+                 <img src="https://image2url.com/images/1763731707494-f9c2f1dc-8572-4c4e-98dc-b64d97ba2eab.png" alt="Company Logo" class="logo">
+                <h1> Welcome, South Daang Hari Resident!</h1>
+                <p> Dont have account ?</p>
+                <button class="btn register-btn">Register</button>
+            </div>
+
+            <div class="toggle-panel toggle-right">
+                    <img src="https://image2url.com/images/1763731707494-f9c2f1dc-8572-4c4e-98dc-b64d97ba2eab.png" alt="Company Logo" class="logo">
+                <h1>Welcome Back!</h1>
+                <p>Already have an account?</p>
+                <button class="btn login-btn">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+        <!-- Forgot-password modal -->
+        <div id="forgotModal" class="modal-overlay" aria-hidden="true">
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+                <div style="position:relative;">
+                    <span id="forgotClose" class="close-btn">✕</span>
+                    <h3 id="forgotTitle">Reset Password</h3>
+                    <p class="muted">Provide your username and registered email to change your password.</p>
+                    <form id="forgotForm" data-stage="verify">
+                        <div class="field">
+                            <label class="font-semibold">Username</label>
+                            <input type="text" id="fpUsername" required />
+                        </div>
+                        <div class="field">
+                            <label class="font-semibold">Registered Email</label>
+                            <input type="email" id="fpEmail" required />
+                        </div>
+                        <div class="field" id="fpPasswordField" style="display:none;">
+                            <label class="font-semibold">New Password</label>
+                            <input type="password" id="fpPassword" minlength="6" />
+                        </div>
+                        <div class="field" id="fpPassword2Field" style="display:none;">
+                            <label class="font-semibold">Confirm Password</label>
+                            <input type="password" id="fpPassword2" minlength="6" />
+                        </div>
+                        <div class="actions">
+                            <button type="button" id="fpCancel" class="btn-secondary">Cancel</button>
+                            <button type="submit" class="btn-primary">Change Password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="position:fixed;bottom:18px;right:18px;">
+              <a href="Admin/login.html" class="btn-secondary" style="padding:8px 12px;">Log in as Admin</a>
+        </div>
+</body>
+</html>

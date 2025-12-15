@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <div class="min-h-screen flex items-center justify-center p-6">
+    <div id="adminWrapper" class="bg-white rounded-lg shadow-lg p-8 w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-4">Admin Login</h2>
+      <form id="adminLoginForm" class="space-y-4">
+        <div class="input-box">
+          <label class="block font-semibold">Admin</label>
+          <input name="username" type="text" placeholder="Username" required />
+          <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+          <label class="block font-semibold">Password</label>
+          <input name="password" type="password" placeholder="Password" required />
+          <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="flex gap-3">
+          <button type="submit" class="btn-primary">Login</button>
+          <a href="../index.html" class="btn-secondary" style="display:inline-flex;align-items:center;padding:10px 12px;">Back</a>
+        </div>
+      </form>
+    </div>
+  </div>
+    <script>
+      // Block admin UI on small screens (mobile/tablet) — desktop/laptop only
+      (function(){
+        const minWidth = 768; // px
+        function enforce() {
+          const wrapper = document.getElementById('adminWrapper');
+          if (!wrapper) return;
+          if (window.innerWidth < minWidth) {
+            wrapper.innerHTML = `
+              <div class="p-6 text-center">
+                <h2 class="text-xl font-bold mb-3">Admin access is desktop-only</h2>
+                <p class="muted mb-4">This admin interface is intended for desktop or laptop use. Please open this page on a larger screen.</p>
+                <a href="../index.html" class="btn-secondary">Return to Site</a>
+              </div>
+            `;
+          }
+        }
+        enforce();
+        window.addEventListener('resize', enforce);
+      })();
+    </script>
+  <script src="login.js"></script>
+</body>
+</html>
